@@ -1,3 +1,13 @@
+$button-background: #336EFF;
+$button-color: #FFFFFF;
+$button-hover: #2D5FD9;
+$error-background: #FFB4B4;
+$error-border: #E60000;
+$li-colorText: #000000;
+
+
+
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,7 +20,7 @@ h1 {
 }
 
 input {
-  width: 400px;
+  width: 300px;
   margin-bottom: 20px;
   border-radius: 20px;
   text-align: center;
@@ -18,12 +28,40 @@ input {
 }
 
 button {
-  width: 100px;
+  width: 120px;
   border-radius: 20px;
+  padding: 5px;
+  background-color: $button-background;
+  border: 0;
+  color: $button-color;
+}
+
+button:hover {
+  background-color: $button-hover;
 }
 
 .error-message {
-  background-color: red;
+  background-color: $error-background;
+  border-radius: 30px;
+  border: 2px solid $error-border;
   margin-top: 20px;
-  width: 300px;
+  width: 400px;
+
+  p {
+    margin: 0;
+  }
+}
+
+.output {
+  h2 {
+    font-size: 2em;
+    margin-top: 40px;
+  }
+  h3 {
+    margin-top: 40px;
+  }
+
+  span {
+    color: $li-colorText;
+  }
 }
