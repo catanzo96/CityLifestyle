@@ -35,7 +35,7 @@ errorDiv.classList.add('col-12', 'error-message');
 const errorMessage = document.createElement('p');
 
 function createError() {
-  errorMessage.innerHTML = '<strong>Attention city not found!</strong> The inserted city does not exist or is not in the database.';
+  errorMessage.innerHTML = `<p><strong>Attention city not found!</strong></p><p>The inserted city does not exist or is not in the database.</p>`;
   errorDiv.append(errorMessage);
   mainMenu.append(errorDiv);
 };
