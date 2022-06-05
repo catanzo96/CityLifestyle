@@ -10,9 +10,9 @@
   <ol>
     <li><a href="#about-the-project">About the project</a></li>
     <li><a href="#built-with">Built with</a></li>
-    <li><a href="#javascript functions">Javascript functions</a>
+    <li><a href="#javascript-functions">JavaScript functions</a>
       <ul>
-        <li><a href="#url-function">Create URL</a></li>
+        <li><a href="#url-function">getURL(name)</a></li>
         <li><a href="#error-function">createError()</a></li>
         <li><a href="#cats-function">createCategories(data)</a></li>
         <li><a href="#output-function">createOutput(data)</a></li>
@@ -46,8 +46,8 @@
 
 <!-- Componenti JavaScript -->
 ## JavaScript functions
-### Create URL
-<p>The getURL(name) function takes the user’s input and creates the URL that will refer to the external server.</p>
+### getURL(name)
+<p>The function takes the user’s input and creates the URL that will refer to the external server.</p>
 
 ### createError()
 <p>The function creates the error message that will be displayed in case of incorrect input or city not present in the database.</p>
