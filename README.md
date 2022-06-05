@@ -12,11 +12,12 @@
     <li><a href="#built-with">Built with</a></li>
     <li><a href="#javascript functions">Javascript functions</a>
       <ul>
-        <li><a href="#url-function">getURL(name)</a></li>
+        <li><a href="#url-function">Create URL</a></li>
         <li><a href="#error-function">createError()</a></li>
         <li><a href="#cats-function">createCategories(data)</a></li>
         <li><a href="#output-function">createOutput(data)</a></li>
         <li><a href="#fetch-function">fetchData(url)</a></li>
+        <li><a href="#time-function">backgroundTime()</a></li>
         </ul>
     </li>
   </ol>
@@ -45,8 +46,8 @@
 
 <!-- Componenti JavaScript -->
 ## JavaScript functions
-### getURL(name)
-<p>The function takes the user’s input and creates the URL that will refer to the external server.</p>
+### Create URL
+<p>The getURL(name) function takes the user’s input and creates the URL that will refer to the external server.</p>
 
 ### createError()
 <p>The function creates the error message that will be displayed in case of incorrect input or city not present in the database.</p>
@@ -58,7 +59,7 @@
 <p>The function generates the output displayed by the user with the information fetched from the server.</p>
 
 ### fetchData(url)
-<p>The asynchronous function fetch the response from the server. In case the server response is wrong the function generates the error with createError() function. Otherwise it will generate the output with createOutput() function that contains the createCategories() function.</p>
+<p>The asynchronous function fetch the response from the server. In case the server response is wrong the function generates the error with <strong>createError()</strong> function. Otherwise it will generate the output with <strong>createOutput()</strong> function that contains the <strong>createCategories()</strong> function.</p>
 
 ### backgroundTime()
 <p>The function handles the background of the page depending on the time the page is visited. also change the style of the text depending on whether the background is light or dark.</p>
