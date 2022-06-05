@@ -8,7 +8,6 @@ function backgroundTime() {
   } if (hour1 > 12 && hour1 <= 20) {
     document.body.style.backgroundImage = "url('./images/background-city-afternoon.png')";
   } else {
-    console.log(hour1)
     document.body.style.backgroundImage = "url('./images/background-city-evening.png')";
     title1.style.color = 'white';
     rowOutput.classList.remove('day-output');
