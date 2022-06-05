@@ -136,7 +136,9 @@ button:hover {
 // Mobile
 @media only screen and (max-width: 480px) {
   body {
-    background-size: cover contain;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
   }
   h1 {
     font-size: 2.5em;
