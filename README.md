@@ -12,13 +12,13 @@
     <li><a href="#built-with">Built with</a></li>
     <li><a href="#javascript-functions">JavaScript functions</a>
       <ul>
-        <li><a href="#url-function">getURL(name)</a></li>
-        <li><a href="#error-function">createError()</a></li>
-        <li><a href="#cats-function">createCategories(data)</a></li>
-        <li><a href="#output-function">createOutput(data)</a></li>
-        <li><a href="#fetch-function">fetchData(url)</a></li>
-        <li><a href="#time-function">backgroundTime()</a></li>
-        </ul>
+        <li><a href="#URL">getURL(name)</a></li>
+        <li><a href="#error">createError()</a></li>
+        <li><a href="#cats">createCategories(data)</a></li>
+        <li><a href="#output">createOutput(data)</a></li>
+        <li><a href="#fetch">fetchData(url)</a></li>
+        <li><a href="#time">backgroundTime()</a></li>
+      </ul>
     </li>
   </ol>
 </details>
