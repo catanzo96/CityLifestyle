@@ -23,6 +23,7 @@ async function fetchData(url) {
   } else {
     const data = await response.json();
     createOutput(data);
+    backgroundTime();
     inputCity.value = '';
   }
 };
@@ -44,7 +45,7 @@ function createError() {
 const containerDiv = document.querySelector('.container');
 // Creazione ed assegnazione classi la row di output
 const rowOutput = document.createElement('div');
-rowOutput.classList.add('row', 'output');
+rowOutput.classList.add('row', 'output', 'day-output');
 const summaryDiv = document.createElement('div');
 summaryDiv.classList.add('col-12');
 const firstCategoriesDiv = document.createElement('div');
@@ -82,16 +83,33 @@ function createCategories(data) {            // Viene chiamata in createOutput()
     // Creazione del primo gruppo di categorie
     firstCategories.forEach(category => {
       const categoryDesc = document.createElement('li');
-        categoryDesc.innerHTML = `<span><strong>${category.name}</strong>: ${(category.score_out_of_10).toFixed()}/10</span>`;
+        categoryDesc.innerHTML = `<span><strong>${category.name}: ${(category.score_out_of_10).toFixed()}/10</strong></span>`;
         categoryDesc.style.color = category.color;
         firstCategoriesDiv.append(categoryDesc);
     });
     // Creazione del secondo gruppo di categorie
     secondCategories.forEach(category => {
       const categoryDesc = document.createElement('li');
-        categoryDesc.innerHTML = `<span><strong>${category.name}</strong>: ${(category.score_out_of_10).toFixed()}/10</span>`;
+        categoryDesc.innerHTML = `<span><strong>${category.name}: ${(category.score_out_of_10).toFixed()}/10</strong></span>`;
         categoryDesc.style.color  = category.color;
         secondCategoriesDiv.append(categoryDesc);
     });
+  };
+};
+
+// Funzione per gestire background
+const hour2 = new Date().getHours();
+const title2 = document.querySelector('h1');
+
+function backgroundTime() {
+  if (hour2 > 4 && hour2 <= 12) {
+    document.body.style.backgroundImage = "url('./images/background-city-morning.png')";
+  } if (hour2 > 12 && hour2 <= 20) {
+    document.body.style.backgroundImage = "url('./images/background-city-afternoon.png')";
+  } if (hour2 > 20 && hour2 <= 4) {
+    document.body.style.backgroundImage = "url('./images/background-city-evening.png')";
+    title2.style.color = 'white';
+    rowOutput.classList.remove('day-output');
+    rowOutput.classList.add('evening-output');
   };
 };

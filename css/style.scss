@@ -4,7 +4,14 @@ $button-color: #FFFFFF;
 $button-hover: #2D5FD9;
 $error-background: #FFDCDC;
 $error-border: #E60000;
-$li-colorText: #000000;
+$li-colorText-day: #000000;
+$text-background-color-day: rgba(255, 255, 255, 0.5);
+$li-colorText-evening: #FFFFFF;
+$text-background-color-evening: rgba(0, 0, 0, 0.5);
+
+$scrollbar-background: #EBEDEF;
+$scrollbar-color: #5D6D7E;
+$scrollbar-hover: #34495E;
 
 * {
   box-sizing: border-box;
@@ -12,6 +19,12 @@ $li-colorText: #000000;
   padding: 0;
 }
 
+body {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
 
 h1 {
   font-size: 3em;
@@ -56,18 +69,68 @@ button:hover {
   }
 }
 
-.output {
+.day-output {
   h2 {
     font-size: 2em;
     margin-top: 40px;
+    display: table;
+    background-color: $text-background-color-day;
+  }
+  p {
+    display: table;
+    background-color: $text-background-color-day;
+  }
+  li::marker {
+    size: 1.6rem;
+  }
+  span {
+    color: $li-colorText-day;
+    background-color: $text-background-color-day;
   }
   h3 {
     margin-top: 30px;
+    display: table;
+    background-color: $text-background-color-day;
   }
+}
 
-  span {
-    color: $li-colorText;
+.evening-output {
+  h2 {
+    font-size: 2em;
+    margin-top: 40px;
+    display: table;
+    color: $li-colorText-evening;
+    background-color: $text-background-color-evening;
   }
+  p {
+    display: table;
+    color: $li-colorText-evening;
+    background-color: $text-background-color-evening;
+  }
+  span {
+    color: $li-colorText-evening;
+    background-color: $text-background-color-evening;
+  }
+  h3 {
+    margin-top: 30px;
+    display: table;
+    color: $li-colorText-evening;
+    background-color: $text-background-color-evening;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: $scrollbar-background;
+}
+::-webkit-scrollbar-thumb {
+  background: $scrollbar-color;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: $scrollbar-hover;
 }
 
 // Mobile
