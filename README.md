@@ -12,14 +12,13 @@
     <li><a href="#built-with">Built with</a></li>
     <li><a href="#javascript-functions">JavaScript functions</a>
       <ul>
-        <li><a href="#URL">getURL(name)</a></li>
-        <li><a href="#error">createError()</a></li>
-        <li><a href="#cats">createCategories(data)</a></li>
-        <li><a href="#output">createOutput(data)</a></li>
-        <li><a href="#fetch">fetchData(url)</a></li>
-        <li><a href="#time">backgroundTime()</a></li>
+        <li><a href="#URL">URL builder</a></li>
+        <li><a href="#error">Error Message</a></li>
+        <li><a href="#cats">Categories builder</a></li>
+        <li><a href="#output">Output generator</a></li>
+        <li><a href="#fetch">Fetch data</a></li>
+        <li><a href="#time">Background changer</a></li>
       </ul>
-    </li>
   </ol>
 </details>
 <br>
@@ -46,23 +45,23 @@
 
 <!-- Componenti JavaScript -->
 ## JavaScript functions
-### getURL(name)
-<p>The function takes the user’s input and creates the URL that will refer to the external server.</p>
+### URL builder
+<p>The getURL(name) function takes the user’s input and creates the URL that will refer to the external server.</p>
 
-### createError()
-<p>The function creates the error message that will be displayed in case of incorrect input or city not present in the database.</p>
+### Error Message
+<p>The createError() function creates the error message that will be displayed in case of incorrect input or city not present in the database.</p>
 
-### createCategories(data)
-<p>The function takes the array containing the categories of each city and divides it into two arrays so that you can improve its display. Once the arrays are created, check that the HTML element in which they will be inserted is empty, in order to avoid overwriting, otherwise it empties the element and then appends the new information.</p>
+### Categories builder
+<p>The createCategories(data) function takes the array containing the categories of each city and divides it into two arrays so that you can improve its display. Once the arrays are created, check that the HTML element in which they will be inserted is empty, in order to avoid overwriting, otherwise it empties the element and then appends the new information.</p>
 
-### createOutput(data)
-<p>The function generates the output displayed by the user with the information fetched from the server.</p>
+### Output generator
+<p>The createOutput(data) function generates the output displayed by the user with the information fetched from the server.</p>
 
-### fetchData(url)
-<p>The asynchronous function fetch the response from the server. In case the server response is wrong the function generates the error with <strong>createError()</strong> function. Otherwise it will generate the output with <strong>createOutput()</strong> function that contains the <strong>createCategories()</strong> function.</p>
+### Fetch data
+<p>The fetchData(url) asynchronous function fetch the response from the server. In case the server response is wrong the function generates the error with createError() function. Otherwise it will generate the output with createOutput() function that contains the createCategories() function.</p>
 
-### backgroundTime()
-<p>The function handles the background of the page depending on the time the page is visited. also change the style of the text depending on whether the background is light or dark.</p>
+### Background changer
+<p>The backgroundTime()function handles the background of the page depending on the time the page is visited. also change the style of the text depending on whether the background is light or dark.</p>
 <div align='center'>
 <img src='./images/README/README_image2.png' alt='Afternoon Page' width = '500'>
 </div>
