@@ -61,7 +61,7 @@
 <p>The fetchData(url) asynchronous function fetch the response from the server. In case the server response is wrong the function generates the error with createError() function. Otherwise it will generate the output with createOutput() function that contains the createCategories() function.</p>
 
 ### Background changer
-<p>The backgroundTime()function handles the background of the page depending on the time the page is visited. also change the style of the text depending on whether the background is light or dark.</p>
+<p>I created three different backgrounds and the backgroundTime() function handles the background of the page depending on the time the page is visited. Also change the style of the text depending on whether the background is light or dark.</p>
 <div align='center'>
 <img src='./images/README/README_image2.png' alt='Afternoon Page' width = '500'>
 </div>

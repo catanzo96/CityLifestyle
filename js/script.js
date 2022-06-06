@@ -23,7 +23,6 @@ async function fetchData(url) {
   } else {
     const data = await response.json();
     createOutput(data);
-    backgroundTime();
     inputCity.value = '';
   }
 };
@@ -94,22 +93,5 @@ function createCategories(data) {            // Viene chiamata in createOutput()
         categoryDesc.style.color  = category.color;
         secondCategoriesDiv.append(categoryDesc);
     });
-  };
-};
-
-// Funzione per gestire background
-const hour2 = new Date().getHours();
-const title2 = document.querySelector('h1');
-
-function backgroundTime() {
-  if (hour2 > 4 && hour2 <= 12) {
-    document.body.style.backgroundImage = "url('./images/background-city-morning.png')";
-  } if (hour2 > 12 && hour2 <= 20) {
-    document.body.style.backgroundImage = "url('./images/background-city-afternoon.png')";
-  } if (hour2 > 20 && hour2 <= 4) {
-    document.body.style.backgroundImage = "url('./images/background-city-evening.png')";
-    title2.style.color = 'white';
-    rowOutput.classList.remove('day-output');
-    rowOutput.classList.add('evening-output');
   };
 };
