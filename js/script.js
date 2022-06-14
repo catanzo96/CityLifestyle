@@ -59,11 +59,13 @@ rowOutput.append(summaryDiv, firstCategoriesDiv, secondCategoriesDiv, scoreDiv);
 // Funzione wrapper per la creazione dell'output
 function createOutput(data) {                   // Viene chiamata in fetchData()
   // Creazione titole e descrizione della città
-  summaryDiv.innerHTML = `<h2>${(inputCity.value).toUpperCase()}</h2> <p>${data.summary}</p>`;
+  const summary = _.get(data, 'summary', 'Value not found.')
+  summaryDiv.innerHTML = `<h2>${(inputCity.value).toUpperCase()}</h2> <p>${summary}</p>`;
   // Funzione che crea le categorie
   createCategories(data);
   // Creazione del punteggio totale
-  scoreDiv.innerHTML = `<h3>Total Score: ${data.teleport_city_score.toFixed()}</h3>`;
+  const score = _.get(data, 'teleport_city_score', '')
+  scoreDiv.innerHTML = `<h3>Total Score: ${score ? score.toFixed() : 'Value not found.'}</h3>`;
 
   containerDiv.append(rowOutput);
 };
@@ -71,27 +73,32 @@ function createOutput(data) {                   // Viene chiamata in fetchData()
 // Funzione per la creazione e lo stile delle categorie
 function createCategories(data) {            // Viene chiamata in createOutput()
   // Le categorie sono suddivise in due gruppi in modo da poter essere visualizzate meglio
-  let firstCategories = data.categories.slice(0, -8);
-  let secondCategories = data.categories.slice(9);
-  // Condizione che verifica l'esistenza di categorie precedenti e richiama la funzione
-  if (firstCategoriesDiv.hasChildNodes()) {
-    firstCategoriesDiv.innerHTML = '';
-    secondCategoriesDiv.innerHTML = '';
-    createCategories(data);
+  const categories = _.get(data, 'categories', '')
+  if (categories) {
+    let firstCategories = categories.slice(0, -8);
+    let secondCategories = categories.slice(9);
+    // Condizione che verifica l'esistenza di categorie precedenti e richiama la funzione
+    if (firstCategoriesDiv.hasChildNodes()) {
+      firstCategoriesDiv.innerHTML = '';
+      secondCategoriesDiv.innerHTML = '';
+      createCategories(data);
+    } else {
+      // Creazione del primo gruppo di categorie
+      firstCategories.forEach(category => {
+        const categoryDesc = document.createElement('li');
+          categoryDesc.innerHTML = `<span><strong>${category.name}: ${(category.score_out_of_10).toFixed()}/10</strong></span>`;
+          categoryDesc.style.color = category.color;
+          firstCategoriesDiv.append(categoryDesc);
+      });
+      // Creazione del secondo gruppo di categorie
+      secondCategories.forEach(category => {
+        const categoryDesc = document.createElement('li');
+          categoryDesc.innerHTML = `<span><strong>${category.name}: ${(category.score_out_of_10).toFixed()}/10</strong></span>`;
+          categoryDesc.style.color  = category.color;
+          secondCategoriesDiv.append(categoryDesc);
+      });
+    };
   } else {
-    // Creazione del primo gruppo di categorie
-    firstCategories.forEach(category => {
-      const categoryDesc = document.createElement('li');
-        categoryDesc.innerHTML = `<span><strong>${category.name}: ${(category.score_out_of_10).toFixed()}/10</strong></span>`;
-        categoryDesc.style.color = category.color;
-        firstCategoriesDiv.append(categoryDesc);
-    });
-    // Creazione del secondo gruppo di categorie
-    secondCategories.forEach(category => {
-      const categoryDesc = document.createElement('li');
-        categoryDesc.innerHTML = `<span><strong>${category.name}: ${(category.score_out_of_10).toFixed()}/10</strong></span>`;
-        categoryDesc.style.color  = category.color;
-        secondCategoriesDiv.append(categoryDesc);
-    });
+    firstCategoriesDiv.innerHTML = 'Value not found.';
   };
 };
